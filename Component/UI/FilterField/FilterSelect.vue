@@ -47,9 +47,9 @@
 </template>
 
 <script lang="ts">
-import { Component } from '@/core/Vue/Annotations';
-import BaseComponent from '@/core/Vue/BaseComponent.vue';
-import { Initialize, Initializable, Property } from '@100k/intiv/Initializable';
+import { Component } from '@/intiv/core/Vue/Annotations';
+import BaseComponent from '@/intiv/core/Vue/BaseComponent.vue';
+import { Initialize, Initializable, Property } from '@/intiv/utils/Initializable';
 import Color from 'color';
 import cloneDeep from 'lodash/cloneDeep';
 import objectGet from 'lodash/get';

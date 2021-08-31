@@ -11,7 +11,7 @@
 <script lang="ts">
 import { Component, Prop } from 'vue-property-decorator';
 
-import BaseComponent from '@/core/Vue/BaseComponent.vue';
+import BaseComponent from '@/intiv/core/Vue/BaseComponent.vue';
 
 
 @Component

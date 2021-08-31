@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import UiFilterBase from '#/Core/Component/UI/FilterField/FilterBase.vue';
-import { Component } from '@/core/Vue/Annotations';
+import { Component } from '@/intiv/core/Vue/Annotations';
 
 
 @Component()

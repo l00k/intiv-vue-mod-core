@@ -1,4 +1,4 @@
-import { Property, Initializable, Initialize } from '@100k/intiv/Initializable';
+import { Property, Initializable, Initialize } from '@/intiv/utils/Initializable';
 
 
 export enum FilterType

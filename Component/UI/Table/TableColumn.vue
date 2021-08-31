@@ -65,8 +65,8 @@
 
 <script lang="ts">
 import { FilterType } from '#/Core/Domain/Model/Filter';
-import { Component } from '@/core/Vue/Annotations';
-import BaseComponent from '@/core/Vue/BaseComponent.vue';
+import { Component } from '@/intiv/core/Vue/Annotations';
+import BaseComponent from '@/intiv/core/Vue/BaseComponent.vue';
 import { Prop, Watch } from 'vue-property-decorator';
 
 

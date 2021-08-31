@@ -115,9 +115,9 @@
 <script lang="ts">
 import UiFilterBase from '#/Core/Component/UI/FilterField/FilterBase.vue';
 import { FilterType } from '#/Core/Domain/Model/Filter';
-import { Pagination } from '@/core/GraphQL/Struct';
-import { Component } from '@/core/Vue/Annotations';
-import BaseComponent from '@/core/Vue/BaseComponent.vue';
+import { Pagination } from '@/intiv/core/GraphQL/Struct';
+import { Component } from '@/intiv/core/Vue/Annotations';
+import BaseComponent from '@/intiv/core/Vue/BaseComponent.vue';
 import { Prop, Ref } from 'vue-property-decorator';
 import Vue from 'vue';
 

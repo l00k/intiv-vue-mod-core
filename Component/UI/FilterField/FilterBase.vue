@@ -1,6 +1,6 @@
 <script lang="ts">
-import BaseComponent from '@/core/Vue/BaseComponent.vue';
-import { Initialize, Initializable, Property } from '@100k/intiv/Initializable/index';
+import BaseComponent from '@/intiv/core/Vue/BaseComponent.vue';
+import { Initialize, Initializable, Property } from '@/intiv/utils/Initializable/index';
 import numbro from 'numbro';
 import { Prop, Watch } from 'vue-property-decorator';
 
