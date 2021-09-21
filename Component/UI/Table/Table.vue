@@ -1,7 +1,10 @@
 <template>
     <div class="ui-table">
 
-        <div class="columns is-justify-content-space-between">
+        <div
+            v-if="pagination"
+            class="columns is-justify-content-space-between"
+        >
             <div class="column">
                 <b-field
                     label="Items per page"
@@ -20,7 +23,7 @@
             <div class="column">
                 <b-pagination
                     :per-page="pagination.itemsPerPage"
-                    :total="pagination.total"
+                    :total="calcPagination.total"
                     :current.sync="pagination.page"
                     order="is-right"
                     class="is-flex-grow-0"
@@ -30,6 +33,12 @@
 
         <b-table
             ref="table"
+            :data="data"
+            :paginated="!backendPagination"
+            :backend-pagination="backendPagination"
+            :per-page="pagination.itemsPerPage"
+            :current-page="pagination.page"
+            pagination-position="bottom"
             v-bind="$attrs"
             v-on="$listeners"
         >
@@ -101,7 +110,7 @@
             <div class="column">
                 <b-pagination
                     :per-page="pagination.itemsPerPage"
-                    :total="pagination.total"
+                    :total="calcPagination.total"
                     :current.sync="pagination.page"
                     order="is-right"
                     class="is-flex-grow-0"
@@ -135,15 +144,33 @@ export default class UiTable
     @Prop({ default: true })
     public showActions : boolean;
 
+    @Prop({ default: false })
+    public backendPagination : boolean;
+
+    @Prop({ default: () => [] })
+    public data : any[];
+
     @Prop({
         default: () => new Pagination()
     })
     public pagination : Pagination;
 
 
+    public get calcPagination () : Partial<Pagination>
+    {
+        if (this.backendPagination) {
+            return this.pagination;
+        }
+        else {
+            return {
+                ...this.pagination,
+                total: this.data.length,
+            }
+        }
+    }
+
     public clearFilters()
     {
-        // todo ld 2021-04-26 05:06:20 - to check after build
         this.$table.$children
             .filter(($child : Vue) => $child.$options.name === 'BSlotComponent')
             .map(($child : Vue) => $child.$children[0])
@@ -156,3 +183,13 @@ export default class UiTable
 
 }
 </script>
+
+<style lang="scss">
+.ui-table {
+    .b-table {
+        .level {
+            display: none;
+        }
+    }
+}
+</style>
