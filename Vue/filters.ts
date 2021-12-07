@@ -1,5 +1,6 @@
 import moment from 'moment';
 import numbro from 'numbro';
+import { debounce } from 'vue-debounce';
 
 export default {
     consoleLog() {
@@ -29,5 +30,10 @@ export default {
     formatDatetime(date : Date)
     {
         return moment(date).format('YYYY-MM-DD HH:mm:ss');
+    },
+
+    debounce(callee : any, delay : number = 300)
+    {
+        return debounce(callee, delay);
     }
 };
